@@ -1,7 +1,7 @@
 # EmployeeManagementSystem
-This repository was built for the USTB summer internship
+This repository was built for the USTB summer internship.
 
-该仓库是为了北京科技大学暑期认识实习小组项目所创建
+该仓库是为了北京科技大学暑期认识实习小组项目所创建。
 
 
 
