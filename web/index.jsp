@@ -52,7 +52,7 @@
 	        </div>
 	        <div class="top_icon">
 	        	<a href="IndexServlet?User=${User.name}" title="主页"><img src="images/top_home.png"></a>
-	        	<a href="#" title="个人设置"><img src="images/top_person.png"></a>
+	        	<a href="ListServlet?User=${User.name}" title="个人设置"><img src="images/top_person.png"></a>
 				<a href="LoginServlet?State=Exit&User=${User.name}" title="退出"><img src="images/top_exit.png"></a>
 	        </div>
 	    </div>

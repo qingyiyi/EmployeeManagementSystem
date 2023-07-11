@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="名榜,wangid">
-    <title>WangID办公管理系统</title>
+    <title>办公管理系统</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -40,39 +40,57 @@
         </div>  
         <!-- 下面写内容 -->
         <div class="kehubh_tj_k">
-            <form class="layui-form layui-form-pane" action="">
-            <ul> 
-                <li>
-                    <div class="left">姓名:</div>
-                    <div class="right"> 
-                        <input type="text" value=${User.name} name="title" required lay-verify="required" placeholder="wangid" autocomplete="off" class="layui-input">
-                    </div>
-                </li>
-                <li>
-                    <div class="left">员工号：</div>
-                    <div class="right"> 
-                        <p>${User.employeeId}</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="left">部门：</div>
-                    <div class="right"> 
-                        <p>${User.department}</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="left">职位：</div>
-                    <div class="right"> 
-                        <p>${User.position}</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="left"> &nbsp;</div>
-                    <div class="right"> 
-                        <button class="button_qr">确定添加保护</button>
-                    </div>
-                </li>
-            </ul> 
+            <form class="layui-form layui-form-pane" method="post" action="ConfigurationServlet" enctype="multipart/form-data">
+                <input type="hidden" name="State" value="Update">
+                <input type="hidden" name="User" value="${User.name}">
+                <ul>
+                    <li>
+                        <div class="left">姓名:</div>
+                        <div class="right">
+                            <input type="text" name="UserName" required lay-verify="required" placeholder="wangid" autocomplete="off" class="layui-input" value=${User.name}>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">员工号：</div>
+                        <div class="right">
+                            <p>${User.employeeId}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">部门：</div>
+                        <div class="right">
+                            <p>${User.department}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">职位：</div>
+                        <div class="right">
+                            <p>${User.position}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <p>当前头像：</p>
+                        </div>
+                        <div class="right">
+                            <img src="${User.photo}" alt="头像" class="img" style="width: 50px; height: 50px;">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left">
+                            <p>上传头像：</p>
+                        </div>
+                        <div class="right">
+                            <div class="tu"><input type="file" name="File"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="left"> &nbsp;</div>
+                        <div class="right">
+                            <button class="button_qr" type="submit" value="提交">确认修改信息</button>
+                        </div>
+                    </li>
+                </ul>
             </form>
         </div>
     </div>
@@ -80,4 +98,3 @@
     <script src="layui/layui.js"></script>
 </body>
 </html>
- 

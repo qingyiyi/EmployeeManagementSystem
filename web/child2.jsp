@@ -52,7 +52,7 @@
 
 		        <div class="top_icon">
 					<a href="IndexServlet?User=${User.name}" title="首页"><img src="images/top_home.png"></a>
-		        	<a href="#" title="个人设置"><img src="images/top_person.png"></a>
+					<a href="ConfigurationServlet" target="main_self_frame" title="个人设置"><img src="images/top_person.png"></a>
 					<a href="LoginServlet?State=Exit&User=${User.name}" title="退出"><img src="images/top_exit.png"></a>
 		        </div>
 		    </div>
@@ -71,7 +71,7 @@
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-address-book fa-fw"></i>VIP客户信息管理</a>
 						<dl class="layui-nav-child">
-							<dd><a href="vip_list.html" target="main_self_frame">VIP客户信息列表</a></dd>
+							<dd><a href="vip_list.jsp" target="main_self_frame">VIP客户信息列表</a></dd>
 						</dl>
 					</li>
 					<li class="layui-nav-item">
@@ -109,7 +109,12 @@
 							<dd><a href="GongDJC.html" target="main_self_frame">工单列表</a></dd>
 						</dl>
 					</li>
-
+					<li class="layui-nav-item">
+						<a href="javascript:;"><i class="fa fa-hourglass-half fa-fw"></i>设置</a>
+						<dl class="layui-nav-child">
+							<dd><a href="ConfigurationServlet?User=${User.name}" target="main_self_frame">个人设置</a></dd>
+						</dl>
+					</li>
 				</ul>
 			</div>
 		</div>
