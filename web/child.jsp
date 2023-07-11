@@ -110,8 +110,12 @@
 							<dd><a href="BuMenGL_list.html" target="main_self_frame">部门职位列表</a></dd>
 						</dl>
 					</li>
-
-
+					<li class="layui-nav-item">
+						<a href="javascript:;"><i class="fa fa-hourglass-half fa-fw"></i>工单进程</a>
+						<dl class="layui-nav-child">
+							<dd><a href="GongDJC.html" target="main_self_frame">工单列表</a></dd>
+						</dl>
+					</li>
 				</ul>
 			</div>
 		</div>

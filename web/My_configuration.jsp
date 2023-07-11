@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,28 +43,27 @@
             <form class="layui-form layui-form-pane" action="">
             <ul> 
                 <li>
-                    <div class="left">公司名称:</div>
+                    <div class="left">姓名:</div>
                     <div class="right"> 
-                        <input type="text" name="title" required lay-verify="required" placeholder="wangid" autocomplete="off" class="layui-input">   
+                        <input type="text" value=${User.name} name="title" required lay-verify="required" placeholder="wangid" autocomplete="off" class="layui-input">
                     </div>
                 </li>
                 <li>
-                    <div class="left">原密码：</div>
+                    <div class="left">员工号：</div>
                     <div class="right"> 
-                        <input type="text" name="title" required lay-verify="required" placeholder="请输入原密码" autocomplete="off" class="layui-input">
+                        <p>${User.employeeId}</p>
                     </div>
                 </li>
                 <li>
-                    <div class="left">新密码：</div>
-                    
+                    <div class="left">部门：</div>
                     <div class="right"> 
-                        <input type="text" name="title" required lay-verify="required" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+                        <p>${User.department}</p>
                     </div>
                 </li>
                 <li>
-                    <div class="left">确认新密码：</div>
+                    <div class="left">职位：</div>
                     <div class="right"> 
-                        <input type="text" name="title" required lay-verify="required" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+                        <p>${User.position}</p>
                     </div>
                 </li>
                 <li>
