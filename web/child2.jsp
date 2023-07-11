@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,17 +40,20 @@
 		        </div>
 
 				<div class="top_user">
-					<span><img src="images/head.jpg" /></span>
+					<span><img src=${User.photo} /></span>
 					<dl>
-						<dt>关晓彤（营销总监）</dt>
-						<dd>级别：普通账户 上次登录时间：2019-05-27 15:30:57</dd>
+						<dt><b>姓名：</b>${User.name}</dt>
+						<dd><b>部门：</b>${User.department}</dd>
+						<dd><b>级别：</b>管理员用户
+							<b>上次登录时间：</b> ${User.ShowTime()}
+						</dd>
 					</dl>
 				</div>
 
 		        <div class="top_icon">
-		        	<a href="index.html" title="首页"><img src="images/top_home.png"></a>
+					<a href="IndexServlet?User=${User.name}" title="首页"><img src="images/top_home.png"></a>
 		        	<a href="#" title="个人设置"><img src="images/top_person.png"></a>
-		        	<a href="#" title="退出"><img src="images/top_exit.png"></a>
+					<a href="LoginServlet?State=Exit&User=${User.name}" title="退出"><img src="images/top_exit.png"></a>
 		        </div>
 		    </div>
 		</div> 
@@ -59,32 +65,21 @@
 					<li class="layui-nav-item layui-nav-itemed">
 						<a class="" href="javascript:;"><i class="fa fa-clipboard fa-fw"></i>日用资料</a>
 						<dl class="layui-nav-child">
-							<dd><a href="daily_mykh.html" target="main_self_frame">我的意向客户管理</a></dd>
 							<dd><a href="daily_list.html" target="main_self_frame">意向客户信息列表</a></dd>
 						</dl>
 					</li>
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-address-book fa-fw"></i>VIP客户信息管理</a>
 						<dl class="layui-nav-child">
-							<dd><a href="vip_luru.html" target="main_self_frame">VIP客户信息录入</a></dd>
 							<dd><a href="vip_list.html" target="main_self_frame">VIP客户信息列表</a></dd>
 						</dl>
 					</li>
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-shield fa-fw"></i>客户保护</a>
 						<dl class="layui-nav-child">
-							<dd><a href="KeHuBH_tj.html"  target="main_self_frame">添加保护系统</a></dd>
-							<dd><a href="KeHuBH_list.html"  target="main_self_frame">我的保护系统列表</a></dd>
 							<dd><a href="KeHuBH_list1.html"  target="main_self_frame">员工保护系统列表</a></dd>
 						</dl>
-					</li> 
-					<li class="layui-nav-item">
-						<a href="javascript:;"><i class="fa fa-address-card fa-fw"></i>回访记录</a>
-						<dl class="layui-nav-child">
-							<dd><a href="HuiFangJL_tj.html" target="main_self_frame">添加回访记录</a></dd>
-							<dd><a href="HuiFangJL_my.html" target="main_self_frame">我的回访记录</a></dd>
-						</dl>
-					</li> 
+					</li>
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-file-text fa-fw"></i>回访列表</a>
 						<dl class="layui-nav-child">
@@ -94,17 +89,26 @@
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-users fa-fw"></i>员工管理</a>
 						<dl class="layui-nav-child">
+							<dd><a href="YuanGong_tj.html" target="main_self_frame">公司员工添加</a></dd>
 							<dd><a href="YuanGonglist.html" target="main_self_frame">公司员工列表</a></dd>
 						</dl>
 					</li> 
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-sitemap fa-fw"></i>部门管理</a>
 						<dl class="layui-nav-child">
+							<dd><a href="BuMenGL_bmtj.html" target="main_self_frame">公司部门添加</a></dd>
 							<dd><a href="BuMenGL_list1.html" target="main_self_frame">公司部门列表</a></dd>
+							<dd><a href="BuMenGL_zwtj.html" target="main_self_frame">部门职位添加</a></dd>
 							<dd><a href="BuMenGL_list.html" target="main_self_frame">部门职位列表</a></dd>
 						</dl>
 					</li>
 
+					<li class="layui-nav-item">
+						<a href="javascript:;"><i class="fa fa-hourglass-half fa-fw"></i>工单进程</a>
+						<dl class="layui-nav-child">
+							<dd><a href="GongDJC.html" target="main_self_frame">工单列表</a></dd>
+						</dl>
+					</li>
 
 				</ul>
 			</div>

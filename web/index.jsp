@@ -51,9 +51,9 @@
 	        	<b><img src="images/word.png" /></b>
 	        </div>
 	        <div class="top_icon">
-	        	<a href="#"><img src="images/top_home.png"></a>
-	        	<a href="#"><img src="images/top_person.png"></a>
-	        	<a href="#"><img src="images/top_exit.png"></a>
+	        	<a href="IndexServlet?User=${User.name}" title="主页"><img src="images/top_home.png"></a>
+	        	<a href="#" title="个人设置"><img src="images/top_person.png"></a>
+				<a href="LoginServlet?State=Exit&User=${User.name}" title="退出"><img src="images/top_exit.png"></a>
 	        </div>
 	    </div>
 	    <div class="content_box">
@@ -62,7 +62,7 @@
 	    			<i> <img src=${User.photo} /></i><!-- 注释去间隔-->
 					<dl>
 					<c:if test="${ empty User}">
-						<dd><b>姓名：</b>您好，请登录</dd>
+                        <dd><b>姓名：</b><a href="login.jsp">您好，请登录</a></dd>
 					</c:if>
 					<c:if test="${ not empty User}">
 						<dd><b>姓名：</b>${User.name}</dd>
@@ -73,6 +73,7 @@
 	    			</dl>
 	    		</div>
 	    		<div class="menu" id="style-3">
+
 	    			<ul>
 	    				<li>
 	    					<h2>
@@ -81,25 +82,25 @@
 		    					<em><img src="images/jt_left.png"></em>
 		    				</h2>
 	    					<dl>
-	    						<dd><a href="child.html">日用资料</a></dd>
-	    						<dd><a href="child.html">营销战况</a></dd>
-	    						<dd><a href="child.html">渠道战况</a></dd>
-	    						<dd><a href="child.html">碰单保护</a></dd>
-	    						<dd><a href="child.html">拜访记录</a></dd>
-	    						<dd><a href="child.html">客户维护</a></dd>
-	    						<dd><a href="child.html">尾款催收</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">日用资料</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">营销战况</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">渠道战况</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">碰单保护</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">拜访记录</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">客户维护</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">尾款催收</a></dd>
 	    					</dl>
 	    				</li>
 	    				<li>
 	    					<h2>
 		    					<img src="images/sm_icon02.png">
-		    					<a href="child.html">大数据库</a>
+		    					<a href="ListServlet?User=${User.name}">大数据库</a>
 		    				</h2>
 	    				</li>
 	    				<li>
 	    					<h2>
 		    					<img src="images/sm_icon03.png">
-		    					<a href="child.html">立项系统</a>
+		    					<a href="ListServlet?User=${User.name}">立项系统</a>
 		    				</h2>
 	    				</li>
 	    				<li>
@@ -109,8 +110,8 @@
 		    					<em><img src="images/jt_left.png"></em>
 		    				</h2>
 	    					<dl>
-	    						<dd><a href="child.html">备案查询</a></dd>
-	    						<dd><a href="child.html">备案查询</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">备案查询</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">备案查询</a></dd>
 	    					</dl>
 	    				</li>
 	    				<li>
@@ -120,35 +121,12 @@
 		    					<em><img src="images/jt_left.png"></em>
 		    				</h2>
 	    					<dl>
-	    						<dd><a href="child.html">企业相关</a></dd>
-	    						<dd><a href="child.html">企业相关</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">企业相关</a></dd>
+	    						<dd><a href="ListServlet?User=${User.name}">企业相关</a></dd>
 	    					</dl>
 	    				</li>
-	    				<li>
-	    					<h2>
-		    					<img src="images/sm_icon06.png">
-		    					<a>个人设置</a>
-		    					<em><img src="images/jt_left.png"></em>
-		    				</h2>
-	    					<dl>
-	    						<dd><a href="child.html">IP锁定</a></dd>
-	    						<dd><a href="child.html">登录记录</a></dd>
-	    						<dd><a href="child.html">密码修改</a></dd>
-	    						<dd><a href="child.html">背景设置</a></dd>
-	    					</dl>
-	    				</li>
-						<li>
-							<h2>
-								<img src="images/sm_icon07.png">
-								<a>管理视图&员工视图</a>
-								<em><img src="images/jt_left.png"></em>
-							</h2>
-							<dl>
-								<dd><a href="child.html">员工视图</a></dd>
-								<dd><a href="child2.html">管理视图</a></dd>
-							</dl>
-						</li>
 	    			</ul>
+
 	    			<script type="text/javascript">
 	    				$(function(){
 	    					var n=0;

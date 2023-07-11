@@ -1,13 +1,19 @@
 package entity;
 
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class UserLogin {
-    int id;
-    String employeeId;
-    String password;
-    String name;
-    String photo;
-    String department;
-    String position;
+    private int id;
+    private String employeeId;
+    private String password;
+    private String name;
+    private String photo;
+    private String department;
+    private String position;
+    private int isAdministrator;
+    private Date time;
 
     public int getId() {
         return id;
@@ -65,6 +71,22 @@ public class UserLogin {
         this.position = position;
     }
 
+    public int getIsAdministrator() {
+        return isAdministrator;
+    }
+
+    public void setIsAdministrator(int isAdministrator) {
+        this.isAdministrator = isAdministrator;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return "UserLogin{" +
@@ -76,5 +98,10 @@ public class UserLogin {
                 ", department='" + department + '\'' +
                 ", position='" + position + '\'' +
                 '}'+'\n';
+    }
+
+    public String ShowTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(Date.parse(time.toString()));
     }
 }
