@@ -2,7 +2,9 @@ package entity;
 
 public class VipCustomer {
     private int systemId;
+    private String productType;
     private String companyName;
+    private String website;
     private int id;
     private String regTime;
     private String password;
@@ -81,5 +83,21 @@ public class VipCustomer {
 
     public void setEmployee(String employee) {
         this.employee = employee;
+    }
+
+    public String getProductType() {
+        return productType;
+    }
+
+    public void setProductType(String productType) {
+        this.productType = productType;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
     }
 }
