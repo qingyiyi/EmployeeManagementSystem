@@ -12,7 +12,7 @@ import java.io.IOException;
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");   //ÉèÖÃ±àÂë
+        request.setCharacterEncoding("utf-8");   //è®¾ç½®ç¼–ç 
         response.setCharacterEncoding("utf-8");
 
         String State = request.getParameter("State");

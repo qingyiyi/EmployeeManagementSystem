@@ -15,7 +15,7 @@ import java.util.Date;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");   //ÉèÖÃ±àÂë
+        request.setCharacterEncoding("utf-8");   //è®¾ç½®ç¼–ç 
         response.setCharacterEncoding("utf-8");
 
         String State = request.getParameter("State");
@@ -23,19 +23,19 @@ public class LoginServlet extends HttpServlet {
             String Username = request.getParameter("UserName");
             String PassWord = request.getParameter("PassWord");
 
-            //Ğ£ÑéÓÃ»§ĞÅÏ¢ÊÇ·ñÕıÈ·
+            //æ ¡éªŒç”¨æˆ·ä¿¡æ¯æ˜¯å¦æ­£ç¡®
             LoginService loginService = new LoginService();
             UserLogin user = loginService.VerifyAccount(Username);
-            //Ğ£ÑéÕıÈ·
+            //æ ¡éªŒæ­£ç¡®
             if (PassWord.equals(user.getPassword())) {
                 request.setAttribute("User", user);
                 request.getRequestDispatcher("index.jsp").forward(request, response);
             } else {
-                //Ğ£Ñé²»ÕıÈ·
+                //æ ¡éªŒä¸æ­£ç¡®
 
             }
         }else if(State.equals("Exit")){
-            //ÓÃ»§ÍË³öÊ±
+            //ç”¨æˆ·é€€å‡ºæ—¶
             String name = request.getParameter("User");
             LoginService loginService = new LoginService();
             UserLogin user = loginService.VerifyAccount(name);

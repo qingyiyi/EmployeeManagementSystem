@@ -10,17 +10,17 @@ import java.io.IOException;
 
 @WebServlet(name = "ListServlet", value = "/ListServlet")
 public class ListServlet extends HttpServlet {
-    //该Servlet用于服务于child页面
+    //璇ervlet鐢ㄤ簬鏈嶅姟浜巆hild椤甸潰
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");   //设置编码
+        request.setCharacterEncoding("utf-8");   //璁剧疆缂栫爜
         response.setCharacterEncoding("utf-8");
 
         String name = request.getParameter("User");
         LoginService loginService = new LoginService();
         UserLogin userLogin = loginService.VerifyAccount(name);
         request.setAttribute("User",userLogin);
-        //根据员工还是管理员的属性，跳转到不同的视图
+        //鏍规嵁鍛樺伐杩樻槸绠＄悊鍛樼殑灞炴�э紝璺宠浆鍒颁笉鍚岀殑瑙嗗浘
         if(userLogin.getIsAdministrator()==0) {
             request.getRequestDispatcher("child.jsp").forward(request, response);
         }else{
