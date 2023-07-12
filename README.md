@@ -59,21 +59,21 @@ This repository was built for the USTB summer internship.
 
 - VipCustomer
 
-  - systemId——系统编号
+  - systemId——系统编号//
 
-  - productType
+  - productType//
 
-  - companyName
+  - companyName//
 
-  - website
+  - website//
 
-  - id——ID号
+  - id——ID号//
 
-  - regTime——注册日期
+  - regTime——注册日期//
 
-  - password
+  - password//
 
-  - contractAmount——合同金额
+  - contractAmount——合同金额//
 
   - recharge——充值
 
