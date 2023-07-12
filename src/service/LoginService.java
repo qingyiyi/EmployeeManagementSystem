@@ -5,11 +5,12 @@ import entity.UserLogin;
 import org.apache.ibatis.session.SqlSession;
 import utils.MybatisUtil;
 
+import java.util.ArrayList;
 
 
 public class LoginService {
     /**
-     * 校验账户是否正确
+     * 校锟斤拷锟剿伙拷锟角凤拷锟斤拷确
      * @param userName
      * @return
      */
@@ -17,12 +18,12 @@ public class LoginService {
         SqlSession session = null;
         UserLogin user = null;
         try {
-            session = MybatisUtil.getSesseion();   //Mybatis的工具类完成session工厂的建立与返回session
+            session = MybatisUtil.getSesseion();
             LoginMapper loginMapper = session.getMapper(LoginMapper.class);
             user = loginMapper.SelectByName(userName);
         }catch (Exception e){
             e.printStackTrace();
-        }finally {   //finally字段保证即使出现错误，也将执行完该代码块
+        }finally {
             if(session!=null){
                 session.close();
             }
@@ -34,17 +35,51 @@ public class LoginService {
         SqlSession session = null;
         int result = 0;
         try {
-            session = MybatisUtil.getSesseion();   //Mybatis的工具类完成session工厂的建立与返回session
+            session = MybatisUtil.getSesseion();
             LoginMapper loginMapper = session.getMapper(LoginMapper.class);
             result = loginMapper.UpdateUserInfo(user.getName(), user.getPhoto(),user.getEmployeeId());
             session.commit();
         }catch (Exception e){
             e.printStackTrace();
-        }finally {   //finally字段保证即使出现错误，也将执行完该代码块
+        }finally {
             if(session!=null){
                 session.close();
             }
         }
         return result;
+    }
+
+    public UserLogin getUserByName(String username){
+        SqlSession session = null;
+        UserLogin user = new UserLogin();
+        try {
+            session = MybatisUtil.getSesseion();
+            LoginMapper loginMapper = session.getMapper(LoginMapper.class);
+            user = loginMapper.SelectByName(username);
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+        return user;
+    }
+
+    public ArrayList<UserLogin> getAllUsers() {
+        SqlSession session = null;
+        ArrayList<UserLogin> allUsers = null;
+        try {
+            session = MybatisUtil.getSesseion();
+            LoginMapper loginMapper = session.getMapper(LoginMapper.class);
+            allUsers = loginMapper.SelectAllUsers();
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+        return allUsers;
     }
 }

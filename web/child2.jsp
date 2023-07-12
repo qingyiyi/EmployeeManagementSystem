@@ -45,7 +45,7 @@
 						<dt><b>姓名：</b>${User.name}</dt>
 						<dd><b>部门：</b>${User.department}</dd>
 						<dd><b>级别：</b>管理员用户
-							<b>上次登录时间：</b> ${User.ShowTime()}
+<%--							<b>上次登录时间：</b> ${User.ShowTime()}--%>
 						</dd>
 					</dl>
 				</div>
@@ -65,7 +65,7 @@
 					<li class="layui-nav-item layui-nav-itemed">
 						<a class="" href="javascript:;"><i class="fa fa-clipboard fa-fw"></i>日用资料</a>
 						<dl class="layui-nav-child">
-							<dd><a href="daily_list.html" target="main_self_frame">意向客户信息列表</a></dd>
+							<dd><a href="CustomerServlet?State=showlist&User=${User.name}" target="main_self_frame">意向客户信息列表</a></dd>
 						</dl>
 					</li>
 					<li class="layui-nav-item">

@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html>
 
@@ -393,7 +392,7 @@
 		    							<dd>张娜拉</dd>
 		    						</dl>
 		    					</div>
-		    					<p>干的不错，小伙伴们继续加油哦！ 更多模板：<a href="http://www.cssmoban.com/" target="_blank">模板之家</a></p>
+		    					<p>干的不错，继续加油！</p>
 	    					</div>
 	    					<div class="con">
 	    						<div>

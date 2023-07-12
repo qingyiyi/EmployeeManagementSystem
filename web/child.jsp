@@ -45,7 +45,7 @@
 						<dt><b>姓名：</b>${User.name}</dt>
 						<dd><b>部门：</b>${User.department}</dd>
 						<dd><b>级别：</b>员工用户
-							<b>上次登录时间：</b> ${User.ShowTime()}
+							<b>上次登录时间：</b> ${User.time}
 						</dd>
 					</dl>
 				</div>
@@ -65,7 +65,7 @@
 					<li class="layui-nav-item layui-nav-itemed">
 						<a class="" href="javascript:;"><i class="fa fa-clipboard fa-fw"></i>日用资料</a>
 						<dl class="layui-nav-child">
-							<dd><a href="daily_mykh.html" target="main_self_frame">我的意向客户管理</a></dd>
+							<dd><a href="daily_mykh.jsp" target="main_self_frame">我的意向客户管理</a></dd>
 							<dd><a href="daily_list.html" target="main_self_frame">意向客户信息列表</a></dd>
 						</dl>
 					</li>
@@ -79,8 +79,8 @@
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-shield fa-fw"></i>客户保护</a>
 						<dl class="layui-nav-child">
-							<dd><a href="KeHuBH_tj.html"  target="main_self_frame">添加保护系统</a></dd>
-							<dd><a href="KeHuBH_list.html"  target="main_self_frame">我的保护系统列表</a></dd>
+							<dd><a href="KeHuBH_tj.jsp"  target="main_self_frame">添加保护系统</a></dd>
+							<dd><a href="CustomerProtectionListServlet?User=${User.name}"  target="main_self_frame">我的保护系统列表</a></dd>
 							<dd><a href="KeHuBH_list1.html"  target="main_self_frame">员工保护系统列表</a></dd>
 						</dl>
 					</li> 
@@ -114,6 +114,7 @@
 						<a href="javascript:;"><i class="fa fa-hourglass-half fa-fw"></i>工单进程</a>
 						<dl class="layui-nav-child">
 							<dd><a href="GongDJC.html" target="main_self_frame">工单列表</a></dd>
+							<dd><a href="GongDJC_my.html" target="main_self_frame">我的工单</a></dd>
 						</dl>
 					</li>
 					<li class="layui-nav-item">

@@ -35,7 +35,7 @@
         <div class="shuaix">
             <div class="left">
                 <b>意向：</b>
-                <select>   
+                <select name="yixiang">
                     <option value="全部">全部</option>   
                     <option value="大">大</option>   
                     <option value="中">中</option>   
@@ -44,8 +44,8 @@
             </div>
             <div class="left" style="margin-left:20px;">
                 <b>员工：</b>
-                <select>   
-                    <option value="全部">全部</option>   
+                <select name="yuangong">
+                    <option value="全部">全部</option>
                     <option value="大师">大师</option>   
                     <option value="阿黄">阿黄</option>   
                     <option value="罗雀">罗雀</option>    
@@ -54,7 +54,7 @@
             <div class="center">统计：【大：20 中：30 小：60】</div>
             <div class="right">
                 <input type="text" placeholder="请输入关键词查询">
-                <a href="#">查询</a>
+                <a href="CustomerServlet?State=search&User=[[${User}]]}">查询</a>
             </div>
         </div>
         <!-- 下面写内容 -->
