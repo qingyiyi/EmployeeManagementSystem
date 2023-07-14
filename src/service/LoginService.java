@@ -82,4 +82,22 @@ public class LoginService {
         }
         return allUsers;
     }
+
+    public int insertUser(UserLogin user){
+        SqlSession session = null;
+        int result=0;
+        try {
+            session = MybatisUtil.getSesseion();
+            LoginMapper loginMapper = session.getMapper(LoginMapper.class);
+            result = loginMapper.insertUser(user);
+            session.commit();
+        }catch (Exception exception){
+            exception.printStackTrace();
+        }finally {
+            if (session!=null){
+                session.close();
+            }
+        }
+        return result;
+    }
 }

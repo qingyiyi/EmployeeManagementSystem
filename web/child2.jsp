@@ -89,7 +89,7 @@
 					<li class="layui-nav-item">
 						<a href="javascript:;"><i class="fa fa-users fa-fw"></i>员工管理</a>
 						<dl class="layui-nav-child">
-							<dd><a href="YuanGong_tj.html" target="main_self_frame">公司员工添加</a></dd>
+							<dd><a href="YuanGong_tj.jsp" target="main_self_frame">公司员工添加</a></dd>
 							<dd><a href="YuanGonglist.html" target="main_self_frame">公司员工列表</a></dd>
 						</dl>
 					</li> 
